@@ -1,0 +1,106 @@
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; 
+        min-height: 100vh;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    /* Kategorien-Styling */
+    .category {
+        display: inline-flex; 
+        flex-direction: column;
+        width: calc(25% - 20px); 
+        margin: 0px;    
+        padding: 20px;
+    }
+    #category-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        width: 100%;
+    }
+    /* Letztes Element in jeder Zeile soll keinen rechten Abstand haben */
+    .category:nth-of-type(4n) {
+        margin-right: 0;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    /* Fragen-Styling */
+    .question {
+        display: flex; 
+        align-items: center; 
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: #1e4a79;
+        margin-bottom: 10px;
+        border-right: 30px solid #1e4a79;
+        border-radius: 6px;
+    }
+
+    .question h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    /* Entfernt den Abstand des letzten Fragen-Elements */
+    .question:last-child {
+        margin-bottom: 0;
+    }
+
+    /*Status Kreis*/
+    .status {
+        width: 15px; 
+        height: 15px; 
+        border-radius: 50%; 
+        display: inline-flex; 
+        margin-right: 10px; 
+        border: 2px solid transparent; 
+        box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Schöner Farbverlauf für den Grundzustand */
+    .status {
+        background: radial-gradient(circle at center, #ffffff 0%, #ffffff 100%);
+    }
+
+    /* Grün für "correct" */
+    .status.correct {
+        background: radial-gradient(circle at center, #4CAF50 0%, #0a972b 100%);
+    }
+
+    /* Rot für "incorrect" */
+    .status.incorrect {
+        background: radial-gradient(circle at center, #F44336 0%, #d32f2f 100%);
+    }
+
+    /* Gelb für "partially-correct" */
+    .status.partially-correct {
+        background: radial-gradient(circle at center, #FFEB3B 0%, #fbc02d 100%);
+    }
+
+    /* Sichtbar ohne Füllung für "unattempted", nur ein Kreisumriss */
+    .status.unattempted {
+        background: none; 
+        border: 2px solid #9e9e9e;
+    }
